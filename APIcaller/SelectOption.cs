@@ -8,7 +8,9 @@ namespace APIcaller
 {
     class SelectOption
     {
+        //sets the state that can determine what the program shows for the main menu 
         private string _state;
+
         
         public void SetState(string state, List<string> user)
         {
