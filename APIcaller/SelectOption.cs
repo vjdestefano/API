@@ -12,43 +12,50 @@ namespace APIcaller
         private string _state { get; set; }
         public string Name { get; set; }
 
-        public void SetState(string state, List<string> user)
+        public string SetState(string state, List<string> user)
         {
 
             if (state == "main menu" || state == "mainmenu")
-            {  
-                 Console.WriteLine("_____________Main Menu____________");
-                 Console.WriteLine("options");
-                 Console.WriteLine("*EXIT*");
+            {
+                Console.WriteLine("_____________main menu____________");
+                Console.WriteLine("-options");
+                Console.WriteLine("*exit*");
 
-                 _state = state;
-                 InputState(user);
+                _state = "main menu";
+                var input = InputState(user);
+                _state = input;
 
+
+                return _state;
             }
             if (state == "options" || state == "option")
             {
                 Console.WriteLine("_____________Options____________");
-                Console.WriteLine("Username: {0} Password:{1}",user[0], user[1]);
-                Console.WriteLine("Main Menu");
-                Console.WriteLine("*EXIT*");
+                Console.WriteLine("Username: {0} Password:{1}", user[0], user[1]);
+                Console.WriteLine("-Main Menu");
+                Console.WriteLine("-*EXIT*");
 
-                _state = state;
-                InputState(user);
-
-
+                _state = "options";
+                var input = InputState(user);
+                _state = input;
+                return _state;
             }
             else{
                 Console.WriteLine("Please Select a Vaild option");
-                InputState(user);
+                var input = InputState(user);
+                _state = input;
+                return _state;
             }
 
         }
 
-        public void InputState(List<string> user)
+        public string InputState(List<string> user)
         {
             Console.WriteLine("Please Enter which menu tab you would like!");
             string state = Console.ReadLine().ToLower();
-            SetState(state, user);
+            return state;
+            //SetState(state, user);
+            
 
         }
 

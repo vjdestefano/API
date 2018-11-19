@@ -10,12 +10,19 @@ namespace APIcaller
     {
         static void Main(string[] args)
         {
-           var userDetials = new UserName();
-           var user = userDetials.UserInput();
+           var userDetails = new UserName();
+           var user = userDetails.UserInput();
 
            var stateSelection = new SelectOption();
-           stateSelection.SetState("main menu", user);
-            
+           var state = stateSelection.SetState("main menu", user);
+           while(state == "main menu" || state == "options")
+            {
+
+                
+            }
+
+
+
         }
     }
 }
