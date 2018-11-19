@@ -44,11 +44,7 @@ namespace APIcaller
             {
 
                 Console.WriteLine(userInputName.Length <= 5);
-                //this
-
                 Console.WriteLine(regexItem.IsMatch(userInputName));
-
-
                 Console.WriteLine("Please make your user name longer than 5 characters and contains a special character");
 
                 userInputName = Console.ReadLine();

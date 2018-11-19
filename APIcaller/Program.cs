@@ -14,7 +14,6 @@ namespace APIcaller
            var user = userDetials.UserInput();
 
            var stateSelection = new SelectOption();
-           //stateSelection.InputState();
            stateSelection.SetState("main menu", user);
             
         }
