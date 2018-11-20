@@ -15,9 +15,9 @@ namespace APIcaller
 
            var stateSelection = new SelectOption();
            var state = stateSelection.SetState("main menu", user);
-           while(state == "main menu" || state == "options")
+           while((state == "main menu" || state == "mainmenu") || (state == "options" || state == "option"))
             {
-
+                stateSelection.SetState(stateSelection.InputState(user), user);
                 
             }
 
